@@ -1,20 +1,20 @@
 let leftIcon = document.querySelector(".left-icon");
 let rightIcon = document.querySelector(".right-icon");
 let sliderList = document.querySelector(".slider-scroll");
-
-
+let arrLi = document.querySelectorAll(" ul li");
+console.log(arrLi.length);
 rightIcon.addEventListener("click", function rightIcon(){
     let valueProp = window.getComputedStyle(sliderList).getPropertyValue("transform");
     let valueArr = valueProp.split(", ");
     let translateXValue = parseInt(valueArr[4]);
-    if (translateXValue > -1344) {
+    if (translateXValue > (arrLi.length -4) * -336) {
         sliderList.style.transform = "translateX(" + (translateXValue - 336) + "px)";
         return;
     }
     else{
         return;
     }
-})
+});
 leftIcon.addEventListener("click", function leftIcon(){
     let valueProp = window.getComputedStyle(sliderList).getPropertyValue("transform");
     let valueArr = valueProp.split(", ");
@@ -26,7 +26,7 @@ leftIcon.addEventListener("click", function leftIcon(){
     else{
         return;
     }
-})
+});
 
 // let buttons = document.querySelectorAll(".icons button");
 
