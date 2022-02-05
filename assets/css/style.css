@@ -23,6 +23,8 @@ section {
 ul {
   color: black;
   padding-left: 0px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 ul li {
