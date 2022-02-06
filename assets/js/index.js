@@ -2,7 +2,7 @@ let leftIcon = document.querySelector(".left-icon");
 let rightIcon = document.querySelector(".right-icon");
 let sliderList = document.querySelector(".slider-scroll");
 let arrLi = document.querySelectorAll(" ul li");
-console.log(arrLi.length);
+
 rightIcon.addEventListener("click", function rightIcon(){
     let valueProp = window.getComputedStyle(sliderList).getPropertyValue("transform");
     let valueArr = valueProp.split(", ");
@@ -27,6 +27,56 @@ leftIcon.addEventListener("click", function leftIcon(){
         return;
     }
 });
+
+
+let leftBottomIcon = document.querySelector(".left-bottom-icon");
+let rightBottomIcon = document.querySelector(".right-bottom-icon");
+let clickCount = 0;
+
+rightBottomIcon.addEventListener("click", function rightIcon(){
+    clickCount++;
+    console.log(clickCount);
+    let valueProp = window.getComputedStyle(sliderList).getPropertyValue("transform");
+    let valueArr = valueProp.split(", ");
+    let translateXValue = parseInt(valueArr[4]);
+        if (clickCount >=0 && clickCount < arrLi.length - 3) {
+            sliderList.style.transform = "translateX(" + (- 336 * clickCount) + "px)";
+        }
+        else{
+            clickCount = arrLi.length - 4;
+            sliderList.style.transform = "translateX(" + (- 336 * clickCount) + "px)";
+        }
+});
+leftBottomIcon.addEventListener("click", function rightIcon(){
+    clickCount--;
+    let valueProp = window.getComputedStyle(sliderList).getPropertyValue("transform");
+    let valueArr = valueProp.split(", ");
+    let translateXValue = parseInt(valueArr[4]);
+    if (clickCount < 0) {
+        clickCount = 0;
+        if (clickCount > 0 ||  clickCount == 0) {
+            sliderList.style.transform = "translateX(" + (-336 * clickCount) + "px)";
+            console.log(clickCount);
+            return;
+        }
+        else{
+            return;
+        }
+    }
+    else{
+        if (clickCount > 0 ||  clickCount == 0) {
+            sliderList.style.transform = "translateX(" + (-336 * clickCount) + "px)";
+            console.log(clickCount);
+            return;
+        }
+        else{
+            return;
+        }
+    }
+       
+});
+console.log(clickCount);
+
 
 // let buttons = document.querySelectorAll(".icons button");
 

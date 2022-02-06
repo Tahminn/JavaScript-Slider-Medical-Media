@@ -23,8 +23,10 @@ section {
 ul {
   color: black;
   padding-left: 0px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 ul li {
